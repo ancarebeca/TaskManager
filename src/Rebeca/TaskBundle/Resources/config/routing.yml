@@ -1,0 +1,17 @@
+#taskbundle:
+#    resource: "@TaskBundle/Controller"
+#    type: annotation
+
+taskbundle_default:
+    resource: "@TaskBundle/Controller/DefaultController.php"
+    type:     annotation
+
+taskbundle_task:
+    resource: "@TaskBundle/Controller/TaskController.php"
+    prefix:   /user
+    type:     annotation
+
+taskbundle_status:
+    resource: "@TaskBundle/Controller/StatusController.php"
+    prefix:   /user
+    type:     annotation
