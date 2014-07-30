@@ -1,3 +1,6 @@
+static_pages:
+    path: /site/{page}
+    defaults: { _controller: TaskBundle:Site:Static }
 task:
     resource: "@TaskBundle/Resources/config/routing.yml"
     prefix:   /

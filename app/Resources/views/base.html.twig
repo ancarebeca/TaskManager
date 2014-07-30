@@ -2,12 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+
+    <body id="{% block id '' %}"><div id="container">
         {% block body %}{% endblock %}
+        <footer>
+            {{ 'now' | date('Y') }} - TaskManager
+           <a href="{{ path('static_pages', {'page' : 'help' }) }}">Help</a>
+        </footer>
         {% block javascripts %}{% endblock %}
+        </div>
     </body>
 </html>
