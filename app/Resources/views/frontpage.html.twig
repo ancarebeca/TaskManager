@@ -3,15 +3,18 @@
 {% block stylesheets %}{% endblock %}
 {% block javascripts %}{% endblock %}
 {% block body %}
-    <h1><a href="#">TaskManager</a></h1>
+    <h1>TaskManager</h1>
     <nav>
         <ul>
-            <li><a href="#">Add task</a></li>
-            <li><a href="#">Register new user </a></li>
+            <li><a href="{{ path('task_new') }}">Add task</a></li>
+            <li><a href="{{ path('fos_user_registration_register') }}">Register new user </a></li>
             <li>{% block fos_user_content %}
                     {% include "FOSUserBundle::layout.html.twig" %}
                 {% endblock fos_user_content %}</li>
         </ul>
     </nav>
+    <div>
+    {{ render(controller("TaskBundle:Task:index")) }}
+    </div>
 {% endblock %}
 

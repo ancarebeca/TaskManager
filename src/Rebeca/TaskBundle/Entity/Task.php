@@ -37,18 +37,18 @@ class Task
     protected  $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="user", type="string")
-     */
-    protected $user;
-
-    /**
      * @var Status
      *
      * @ORM\ManyToOne(targetEntity="Status", inversedBy="task")
      */
     protected $status;
+    
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="task")
+     */
+    protected $user;
 
     /**
      * @var createdAt

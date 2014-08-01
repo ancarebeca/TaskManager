@@ -21,10 +21,58 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="user")
+     */
+    protected  $task;
 
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->task = new ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add task
+     *
+     * @param \Rebeca\TaskBundle\Entity\Task $task
+     * @return User
+     */
+    public function addTask(\Rebeca\TaskBundle\Entity\Task $task)
+    {
+        $this->task[] = $task;
+
+        return $this;
+    }
+
+    /**
+     * Remove task
+     *
+     * @param \Rebeca\TaskBundle\Entity\Task $task
+     */
+    public function removeTask(\Rebeca\TaskBundle\Entity\Task $task)
+    {
+        $this->task->removeElement($task);
+    }
+
+    /**
+     * Get task
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTask()
+    {
+        return $this->task;
     }
 }
