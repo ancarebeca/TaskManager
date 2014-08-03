@@ -4,6 +4,16 @@
 {% block javascripts %}{% endblock %}
 {% block body %}
     <h1>TaskManager</h1>
+<<<<<<< HEAD
+    <ul class="nav nav-tabs" role="tablist">
+	  <li><a href="{{ path('task_new') }}">Add task</a></li>
+      <li><a href="{{ path('fos_user_registration_register') }}">Register new user </a></li>
+      <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+	</ul>
+
+    <div>
+        {% block bodycontent %}{% endblock bodycontent%}
+=======
     <nav>
         <ul>
             <li><a href="{{ path('task_new') }}">Add task</a></li>
@@ -15,6 +25,7 @@
     </nav>
     <div>
     {{ render(controller("TaskBundle:Task:index")) }}
+>>>>>>> b68a058df42d7d5fd8d76ccba906f661e3856b44
     </div>
 {% endblock %}
 

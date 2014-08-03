@@ -31,10 +31,10 @@ class TaskController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('TaskBundle:Task')->findAll();
+        $allTasks = $em->getRepository('TaskBundle:Task')->findAll();
 
         return array(
-            'entities' => $entities,
+            'allTasks' => $allTasks,
         );
     }
     /**

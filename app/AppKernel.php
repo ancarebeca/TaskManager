@@ -19,7 +19,13 @@ class AppKernel extends Kernel
             new Rebeca\TaskBundle\TaskBundle(),
             new FOS\UserBundle\FOSUserBundle(),
         	new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+<<<<<<< HEAD
+        	new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
+        	new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle()
+=======
         	new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(), 
+>>>>>>> b68a058df42d7d5fd8d76ccba906f661e3856b44
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

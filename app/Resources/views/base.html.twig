@@ -2,6 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+<<<<<<< HEAD
+         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+         {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+=======
+>>>>>>> b68a058df42d7d5fd8d76ccba906f661e3856b44
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
@@ -12,7 +17,17 @@
             {{ 'now' | date('Y') }} - TaskManager
            <a href="{{ path('static_pages', {'page' : 'help' }) }}">Help</a>
         </footer>
+<<<<<<< HEAD
+        {% block javascripts %}
+        </div>
+            <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+		    <script src="{{ asset('js/jquery.js') }}"></script>
+		    <!-- Include all JavaScripts, compiled by Assetic -->
+		    <script src="{{ asset('js/bootstrap.js') }}"></script>
+		{% endblock %}
+=======
         {% block javascripts %}{% endblock %}
         </div>
+>>>>>>> b68a058df42d7d5fd8d76ccba906f661e3856b44
     </body>
 </html>
