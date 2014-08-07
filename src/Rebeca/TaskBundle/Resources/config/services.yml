@@ -1,15 +1,10 @@
 parameters:
-#    task.sendmail.class: ITER\NameBundle\Model\SendMail
+    task.sendmail.class: ITER\NameBundle\Model\SendMail
 
 services:
-#    task.sendmail.class:
-#        class: %task.sendmail.class%
-#        scope: prototype
-#        arguments: [ @logger, @mailer]
-
     listener.email_confirmation_listener:
         class: Rebeca\TaskBundle\EventListener\EmailConfirmationListener
-        arguments: [ @logger]
+        arguments: [ @logger, @mailer, @service_container]
         tags:
             - { name: kernel.event_listener, event: task_bundle.create.confirmation, method: onConfirmationSuccess }
 

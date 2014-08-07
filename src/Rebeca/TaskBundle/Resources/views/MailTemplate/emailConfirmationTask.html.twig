@@ -1,0 +1,11 @@
+ New task has been created by {{ creator.username }}.
+ 
+Details:
+
+	Name:        {{ task.name }}
+	Description: {{ task.description }}
+	Assigned:    {{ task.user.username }}
+	Createdat:   {% if task.createdAt   %}{{ task.createdAt|date('Y-m-d H:i:s')}}  {% endif %}
+	Updatedat:   {% if task.updatedAt   %}{{ task.updatedAt|date('Y-m-d H:i:s')}}  {% endif %}
+	Finishedat:  {% if task.finishedAt  %}{{ task.finishedAt|date('Y-m-d H:i:s')}} {% endif %}
+	Status:      {% if task.status.name %}{{ task.status.name }}                   {% endif %}
