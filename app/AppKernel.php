@@ -22,7 +22,6 @@ class AppKernel extends Kernel
         	new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
         	new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
         	new Knp\Bundle\MenuBundle\KnpMenuBundle()
-
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

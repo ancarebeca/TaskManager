@@ -9,21 +9,20 @@
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
-
-    <body id="{% block id '' %}"><div id="container">
-        {% block body %}{% endblock %}
-        <footer>
+     <body id="{% block id '' %}">
+	
+	   {% block body %}{% endblock %}
+	   <footer>
             {{ 'now' | date('Y') }} - TaskManager
            <a href="{{ path('static_pages', {'page' : 'help' }) }}">Help</a>
         </footer>
-
-        {% block javascripts %}
-        </div>
-            <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-		    <script src="{{ asset('js/jquery.js') }}"></script>
-		    <!-- Include all JavaScripts, compiled by Assetic -->
-		    <script src="{{ asset('js/bootstrap.js') }}"></script>
-		{% endblock %}
+	   
+   {% block javascripts %}
+      <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+	  <script src="{{ asset('js/jquery.js') }}"></script>
+	  <!-- Include all JavaScripts, compiled by Assetic -->
+	  <script src="{{ asset('js/bootstrap.js') }}"></script>
+	{% endblock %}
 
     </body>
 </html>

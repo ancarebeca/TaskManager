@@ -26,10 +26,10 @@
 
 		"doctrine/data-fixtures": "dev-master",
 		"raulfraile/ladybug-bundle" : "~1.0",
-		"braincrafted/bootstrap-bundle": "dev-master",
+		"braincrafted/bootstrap-bundle": "dev-develop",
 		"twbs/bootstrap": "3.0.*",
         "jquery/jquery":  "1.10.*",
-        "knplabs/knp-menu-bundle": "~2.0"
+        "knplabs/knp-menu-bundle": "dev-master"
 
 	},
 	"require-dev" : {

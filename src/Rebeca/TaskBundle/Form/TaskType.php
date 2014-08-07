@@ -18,9 +18,21 @@ class TaskType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('user')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('finishedAt')
+            ->add('createdAt','date',array(
+						            'widget' => 'single_text',
+						            'format' => 'dd-MM-yyyy',
+						            'attr' => array('class' => 'date')
+        							))
+            ->add('updatedAt','date',array(
+						            'widget' => 'single_text',
+						            'format' => 'dd-MM-yyyy',
+						            'attr' => array('class' => 'date')
+        							))
+            ->add('finishedAt','date',array(
+						            'widget' => 'single_text',
+						            'format' => 'dd-MM-yyyy',
+						            'attr' => array('class' => 'date')
+        							))
             ->add('status')
         ;
     }

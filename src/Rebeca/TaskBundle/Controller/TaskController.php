@@ -61,7 +61,7 @@ class TaskController extends Controller
             $event = new TaskEvent($userName, $entity);
             $dispatcher->dispatch(TaskBundleEvents::CREATE_CONFIRMATION_SUCCESS, $event);
 
-            return $this->redirect($this->generateUrl('task_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('homepage', array('id' => $entity->getId())));
         }
 
         return array(
@@ -201,7 +201,7 @@ class TaskController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('task_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('homepage'));
         }
 
         return array(

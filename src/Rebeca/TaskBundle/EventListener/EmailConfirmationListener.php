@@ -17,8 +17,6 @@ class EmailConfirmationListener
     private $logger;
     private $mailer;
     private $container;
-    private $mailer_from;
-
     
     public function __construct(Logger $logger, \Swift_Mailer $mailer, Container $container)
     {
@@ -41,7 +39,7 @@ class EmailConfirmationListener
         	$this-> mailer ->send($message);
         		
         }catch(Exception $e){
-        	$this ->logger->error( "Sorry, email message could not be delivered" . $e->getMessage());
+        	$this ->logger->error( "Sorry, email message could not be delivered " . $e->getMessage());
         }
         
     }

@@ -1,19 +1,23 @@
 
 {% extends '::base.html.twig' %}
-{% block stylesheets %}{% endblock %}
-{% block javascripts %}{% endblock %}
+
 {% block body %}
-    <h1>TaskManager</h1>
-
-    <ul class="nav nav-tabs" role="tablist">
-	  <li><a href="{{ path('task_new') }}">Add task</a></li>
-      <li><a href="{{ path('fos_user_registration_register') }}">Register new user </a></li>
-      <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
-	</ul>
-
-    <div>
-        {% block bodycontent %}{% endblock bodycontent%}
-
-    </div>
+	<div id="menuheader">
+    	<h1>TaskManager</h1>
+		{{ knp_menu_render('TaskBundle:Builder:mainMenu', { 'style': 'tabs' }) }}
+	</div>
+	<div id="bodycontent">
+		{% block bodycontent %}{% endblock bodycontent%}
+	</div>
 {% endblock %}
 
+{% block stylesheets %}{% endblock %}
+
+{% block javascripts %}
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+ <script>
+	$('.date').datepicker({ dateFormat: 'dd-mm-yy' })
+</script>
+{% endblock %}

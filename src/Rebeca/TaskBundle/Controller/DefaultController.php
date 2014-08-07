@@ -14,7 +14,7 @@ class DefaultController extends Controller
 {
     /**
      *
-     * @Route("/")
+     * @Route("/", name="homepage")
      * @Method("GET")
      * @Template()
      */

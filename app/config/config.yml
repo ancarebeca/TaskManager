@@ -63,9 +63,9 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport:  "%mailer_transport%"
+    encryption: ssl
     host:       "%mailer_host%"
-    encryption: "%mailer_encryption%"
-    auth_mode:  "%mailer_auth_mode%"
+    auth_mode:  login
     username:   "%mailer_user%"
     password:   "%mailer_password%"
     spool:     { type: memory }
@@ -79,7 +79,8 @@ fos_user:
             type: fos_user_registration
             name: fos_user_registration_form
             validation_groups:  [Registration, Default]
-            
+    
+# Braincrafted_bootstrap Configuration            
 braincrafted_bootstrap:
     output_dir:
     assets_dir: %kernel.root_dir%/../vendor/twbs/bootstrap
@@ -88,9 +89,18 @@ braincrafted_bootstrap:
     auto_configure:
         assetic: true
         twig: true
-        knp_menu: true
+        knp_menu: false
         knp_paginator: true
     customize:
         variables_file: ~
         bootstrap_output: %kernel.root_dir%/Resources/less/bootstrap.less
         bootstrap_template: BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig
+        
+# Knp_menu Configuration  
+knp_menu:
+    twig:
+        template: BraincraftedBootstrapBundle:Menu:bootstrap.html.twig
+#knp_menu:
+#    twig:       false                        # use "twig: false" to disable the Twig extension and the TwigRenderer
+#    templating: false                   # if true, enables the helper for PHP templates
+#    default_renderer: twig              # The renderer to use, list is also available by default
